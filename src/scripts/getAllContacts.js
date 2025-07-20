@@ -3,10 +3,15 @@ import { readContacts } from '../utils/readContacts.js';
 
 export const getAllContacts = async () => {
   try {
-    return await readContacts();
+    const contacts = await readContacts();
+    if (contacts.length === 0) {
+      return [];
+    }
+    console.log('All contacts:');
+    return contacts;
   } catch (error) {
     console.error('Error getting all contacts:', error);
   }
 };
 
-console.log(getAllContacts());
+console.log(await getAllContacts());
