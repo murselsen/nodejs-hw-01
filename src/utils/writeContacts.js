@@ -1,5 +1,4 @@
 import { PATH_DB } from '../constants/contacts.js';
-import { readContacts } from './readContacts.js';
 
 import { writeFile } from 'fs/promises';
 
